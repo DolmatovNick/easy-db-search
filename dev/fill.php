@@ -10,8 +10,10 @@ $pdo = require('db/pdo.php');
 
 $sql = 'INSERT INTO site_feedback (name, email_local, email_domain, text) VALUES ';
 
+// count of batch
 for ($i = 0; $i < 5000; $i++) {
     $values = '';
+    // batch
     for ($j = 0; $j < 500; $j++) {
         $faker = Faker\Factory::create();
         $email = explode('@',$faker->email);
