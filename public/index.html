@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test Ararel task</title>
+	<link rel="shortcut icon" href="#" />
+</head>
+<body>
+
+<form id="feedback-form" action="/">
+	<div id="info"></div>
+
+	<div>Имя: </div>
+	<input type="text" name="name">
+
+	<div>Email: </div>
+	<input type="text" name="email">
+
+	<div>Текст: </div>
+	<textarea name="text" cols="30" rows="10"></textarea>
+
+	<div>
+		<button>Отправить отзыв</button>
+	</div>
+
+</form>
+
+<hr>
+
+<form action="/">
+	<div>Поиск по email</div>
+	<input type="text" name="search-email" value="<?=$_GET['search-email']?>">
+	<button type="submit">Поиск</button>
+</form>
+
+<div>Страницы</div>
+<a href="/?page=<?=$_GET['page'] - 1 > 0 ?: 0?>&search-email=<?=$_GET['search-email']?>"> <- Туда </a> ...
+<a href="/?page=<?=$_GET['page'] + 1?>&search-email=<?=$_GET['search-email']?>"> Сюда -> </a>
+
+<table>
+	<tr>
+		<td>имя</td>
+		<td>дата</td>
+		<td>email</td>
+		<td>текст комментария</td>
+	</tr>
+
+	<?php foreach ($feedback as $user) { ?>
+		<tr>
+			<td><?=htmlspecialchars($user['name'])?></td>
+			<td nowrap><?=$user['created_at']?></td>
+			<td><?=$user['email']?></td>
+			<td><?=htmlspecialchars($user['text'])?></td>
+		</tr>
+	<?php }	?>
+</table>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/public/main.js"></script>
+
+</html>

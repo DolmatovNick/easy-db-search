@@ -1,0 +1,16 @@
+{
+    "name": "pupsik/ararel",
+    "description": "Test for Ararel",
+    "require": {
+
+    },
+    "authors": [
+        {
+            "name": "Nick Dolmatov",
+            "email": "DolmatovNick@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "fzaninotto/faker": "^1.8"
+    }
+}
