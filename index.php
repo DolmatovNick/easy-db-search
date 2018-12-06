@@ -23,10 +23,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         $where = 'WHERE email_local = :email_local AND email_domain = :email_domain';
         $whereValues = [':email_local' => $email[0], ':email_domain' => $email[1]];
-
-        $sth = $pdo->prepare('SELECT count(*) count FROM site_feedback '.$where);
-        $sth->execute($whereValues);
-        $rowsCount = $sth->fetchColumn();
     }
 
     $_GET['page'] = (int)$_GET['page'] < 0 ? 0 : (int)$_GET['page'];
