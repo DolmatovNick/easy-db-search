@@ -92,5 +92,8 @@ function getValidateErrors($name, $email, $text): array
 
 function getResponseJson($status, $text): string
 {
-    return '{"status":"'.$status.'", "text": "'.$text.'"}';
+    return json_encode([
+        'status' => $status,
+        'text' => $text,
+    ]);
 }
