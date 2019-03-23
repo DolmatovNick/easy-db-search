@@ -9,3 +9,5 @@ CREATE TABLE site_feedback (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 CREATE INDEX site_feedback_email_local on site_feedback(email_local(16));
+
+-- TEST STRING
