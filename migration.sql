@@ -13,3 +13,5 @@ CREATE INDEX site_feedback_email_local on site_feedback(email_local(16));
 -- TEST STRING
 -- TEST STRING 2
 -- TEST STRING 3
+
+-- TEST STRING -FEATURE
